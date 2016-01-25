@@ -1,6 +1,6 @@
 {
   "name": "payment-polyfill",
-  "version": "0.1.0-dev",
+  "version": "0.1.0",
   "moduleType": ["amd"],
   "description": "A polyfill for the Web Payments Browser API",
   "authors": [
