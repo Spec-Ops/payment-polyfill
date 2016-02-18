@@ -47,7 +47,6 @@ Example:
 
 ```javascript
 navigator.payment.registerApp({
-  '@context': 'https://w3id.org/web-payments/v1',
   id: 'https://bitcoin-wallet.example.com/app/',
   type: 'PaymentApp',
   name: 'Example Bitcoin App',
@@ -79,7 +78,6 @@ website may need to take further action to complete the payment.
 
 ```javascript
 navigator.payment.request({
-  '@context': 'https://w3id.org/web-payments/v1',
   type: 'PaymentRequest'
   description: 'Payment to ExampleMerch for Widget 1'
   acceptablePayment: [{
@@ -99,13 +97,6 @@ navigator.payment.request({
       currency: 'BTC'
     },
     destination: '3QJmV3qfvL9SuYo34YihAf3sRCW3qSinyC'
-  },
-  signature: {
-    type: 'LinkedDataSignature2015',
-    creator: 'https://payee.example.com/keys/23',
-    created: '2015-09-23T20:21:34Z',
-    nonce: '239847230947223423',
-    signatureValue: 'OGQzNGVkMzVm4NTIyZTkZ...goYzI43Q3ODIyOWM32NjI='
   }
 }).then(function(acknowledgement) {
   // ...
@@ -126,7 +117,6 @@ The call takes the following arguments:
 
 ```javascript
 navigator.payment.acknowledge({
-  '@context': 'https://w3id.org/web-payments/v1',
   type: 'PaymentAcknowledgement',
   description: 'Payment to ExampleMerch for widgets',
   payment: {
@@ -137,13 +127,6 @@ navigator.payment.acknowledge({
       amount: '4.35',
       currency: 'USD'
     }
-  },
-  signature: {
-    type: 'LinkedDataSignature2015',
-    creator: 'https://payment-service-provider.example.com/keys/12',
-    created: '2015-09-23T20:23:15Z',
-    nonce: '239807882930744352',
-    signatureValue: 'm4NTIyZTOGQzNGVkMzVkZ...OWM32NjIgoYzI43Q3ODIy='
   }
 });
 ```
